@@ -1,0 +1,16 @@
+﻿@model HomeViewModel
+@*controllern skickar med en (home)viewmodel, behöver tala om att den modellen används*@
+<partial name="_Carousel" />
+
+<h2>Pies of the week</h2>
+<h4>Our weekly selection - just for you!</h4>
+
+<div class="row">
+
+    @foreach (var pie in Model.PiesOfTheWeek)
+    {
+        @*återanvänder samma partialview som i listan men bara på piesoftheweek*@
+        <partial name="_PieCard" model="pie" />
+    }
+
+</div>

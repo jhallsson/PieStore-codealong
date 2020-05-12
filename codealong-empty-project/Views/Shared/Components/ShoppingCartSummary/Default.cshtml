@@ -1,0 +1,15 @@
+﻿@model ShoppingCartViewModel
+
+@*Hämtar data från db - finns det items visa symbol och count*@
+@if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
+{
+    @*Eftersom komponenten är inbäddad i en li-tagg kan den användas i _Layout ul-listan*@
+    <li>
+        <a>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="cart-status">
+                @Model.ShoppingCart.ShoppingCartItems.Count
+            </span>
+        </a>
+    </li>
+}

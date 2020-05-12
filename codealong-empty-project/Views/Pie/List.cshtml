@@ -1,0 +1,13 @@
+﻿@model PieListViewModel
+@*@model IEnumerable<codealong_pie_project.Models.Pie> //För att använda ViewBag*@
+@*//För att använda ViewModel + hämtar hela pathen från _ViewImports*@
+
+
+<h1>@Model.CurrentCategory</h1>
+
+@*@foreach (var pie in Model) //ViewBag: foreach pie in Model*@
+@foreach (var pie in Model.Pies)
+{
+    @*_PieCard använder varje pie-instans som modellen tills alla pajer är loopade*@
+    <partial name="_PieCard" model="pie"/>
+}
